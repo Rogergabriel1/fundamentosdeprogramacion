@@ -1,0 +1,24 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <iostream> // libreria para mejorar mensajes cout y cin
+
+using namespace std; // maneja la salida y la entrada standard
+
+int main() // inicio del algoritmo 
+{
+           cout<<"Bolivianos: el hado propicio"<<endl;    
+           cout<<"coronó nuestros votos y anhelo"<<endl;   
+           cout<<"es ya libre, ya libre este suelo"<<endl;   
+           cout<<"ya cesó su servil condición"<<endl;   
+           cout<<"Al estruendo marcial que ayer fuera"<<endl; 
+           cout<<"y al clamor de la guerra horroroso"<<endl;    
+           cout<<"siguen hoy, en contraste armonioso"<<endl;    
+           cout<<"dulces himnos de paz y de unión"<<endl;    
+        return 0; // no devuelve nada 
+}
