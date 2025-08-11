@@ -1,0 +1,15 @@
+Algoritmo suma
+	Escribir 	"ingresar el primer numero: "
+	Leer A
+	Escribir "ingresar el segundo numero: "
+	Leer B
+	C <- A+B
+	Escribir "el resultado es: ",c
+	C <- A-B
+	Escribir "el resultado es: ",c
+	c <- A*B
+	Escribir "el resultado es: ",c
+	c <- A/B
+	Escribir "el resultado es: ",c
+FinAlgoritmo
+
