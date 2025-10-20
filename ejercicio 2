@@ -1,0 +1,111 @@
+// ConsoleApplication1.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
+//
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+// Prototipos de funciones (declaraciones)
+int mayorDeTres(int, int, int);
+int serieFor(int);
+double pesoTotalProductos(int);
+
+int main() {
+    int opcion;
+
+    do {
+        cout << "\nElige una opcion:\n";
+        cout << "1. Determinar el mayor de tres numeros\n";
+        cout << "2. Calcular la serie con ciclo For\n";
+        cout << "3. Calcular el peso total de productos\n";
+        cout << "4. Salir\n";
+        cout << "opcion: ";
+        cin >> opcion;
+
+        switch (opcion) {
+        case 1: {
+            int a, b, c;
+            cout << "Introduce el primer numero: ";
+            cin >> a;
+            cout << "Introduce el segundo numero: ";
+            cin >> b;
+            cout << "Introduce el tercer numero: ";
+            cin >> c;
+
+            int mayor = mayorDeTres(a, b, c); 
+            cout << "El mayor numero es: " << mayor << endl;
+            break;
+        }
+        case 2: {
+            int x;
+            cout << "Introduce el valor de x: ";
+            cin >> x;
+
+            int resultado = serieFor(x);
+            cout << "La suma total de la serie es: " << resultado << endl;
+            break;
+        }
+        case 3: {
+            int cantidad;
+            cout << "¿Cuantos productos deseas ingresar? ";
+            cin >> cantidad;
+
+            double total = pesoTotalProductos(cantidad);
+            cout << "El peso total de los productos es: " << total << " gramos.\n";
+            break;
+        }
+        case 4:
+            cout << "Hasta luego\n";
+            break;
+        default:
+            cout << "Opcion no valida. Intenta de nuevo.\n";
+        }
+
+    } while (opcion != 4);
+
+    return 0;
+}
+
+// ----------------------
+// Definiciones de funciones
+// ----------------------
+
+int mayorDeTres(int x, int y, int z) { 
+    if (x == y && y == z)
+        return x; 
+    else if (x > y && x > z)
+        return x;
+    else if (y > x && y > z)
+        return y;
+    else
+        return z;
+}
+
+int serieFor(int x) { 
+    int suma = 0;
+    for (int b = 1; b <= 10; ++b) {
+        suma += pow(x, b);
+    }
+    return suma;
+}
+
+double pesoTotalProductos(int cantidad) { 
+    double total = 0.0;
+    for (int i = 1; i <= cantidad; i++) {
+        double peso;
+        cout << "Ingresa el peso del producto " << i << " (en gramos): ";
+        cin >> peso;
+        total += peso;
+    }
+    return total;
+}
+
+// Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
+// Depurar programa: F5 o menú Depurar > Iniciar depuración
+
+// Sugerencias para primeros pasos: 1. Use la ventana del Explorador de soluciones para agregar y administrar archivos
+//   2. Use la ventana de Team Explorer para conectar con el control de código fuente
+//   3. Use la ventana de salida para ver la salida de compilación y otros mensajes
+//   4. Use la ventana Lista de errores para ver los errores
+//   5. Vaya a Proyecto > Agregar nuevo elemento para crear nuevos archivos de código, o a Proyecto > Agregar elemento existente para agregar archivos de código existentes al proyecto
+//   6. En el futuro, para volver a abrir este proyecto, vaya a Archivo > Abrir > Proyecto y seleccione el archivo .sln
