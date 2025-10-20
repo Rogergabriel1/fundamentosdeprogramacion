@@ -1,0 +1,99 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+// Prototipos de funciones (declaraciones)
+int mayorDeTres(int, int, int);
+int serieFor(int);
+double pesoTotalProductos(int);
+
+int main() {
+    int opcion;
+    
+    do {
+        // Menú de opciones
+        cout << "\nElige una opción:\n";
+        cout << "1. Determinar el mayor de tres números\n";
+        cout << "2. Calcular la serie con ciclo For\n";
+        cout << "3. Calcular el peso total de productos\n";
+        cout << "4. Salir\n";
+        cout << "Opción: ";
+        cin >> opcion;
+
+        switch (opcion) {
+            case 1: {
+                int a, b, c;
+                cout << "Introduce el primer número: ";
+                cin >> a;
+                cout << "Introduce el segundo número: ";
+                cin >> b;
+                cout << "Introduce el tercer número: ";
+                cin >> c;
+
+                int mayor = mayorDeTres(a, b, c); // llamada con parámetros actuales
+                cout << "El mayor número es: " << mayor << endl;
+                break;
+            }
+            case 2: {
+                int x;
+                cout << "Introduce el valor de x: ";
+                cin >> x;
+
+                int resultado = serieFor(x);
+                cout << "La suma total de la serie es: " << resultado << endl;
+                break;
+            }
+            case 3: {
+                int cantidad;
+                cout << "¿Cuántos productos deseas ingresar? ";
+                cin >> cantidad;
+
+                double total = pesoTotalProductos(cantidad);
+                cout << "El peso total de los productos es: " << total << " gramos.\n";
+                break;
+            }
+            case 4:
+                cout << "¡Hasta luego!\n";
+                break;
+            default:
+                cout << "Opción no válida. Intenta de nuevo.\n";
+        }
+
+    } while (opcion != 4);
+
+    return 0;
+}
+
+// ----------------------
+// Definiciones de funciones
+// ----------------------
+
+int mayorDeTres(int x, int y, int z) { // parámetros formales
+    if (x == y && y == z)
+        return x; // todos iguales
+    else if (x > y && x > z)
+        return x;
+    else if (y > x && y > z)
+        return y;
+    else
+        return z;
+}
+
+int serieFor(int x) { // parámetros formales
+    int suma = 0;
+    for (int b = 1; b <= 10; ++b) {
+        suma += pow(x, b);
+    }
+    return suma;
+}
+
+double pesoTotalProductos(int cantidad) { // parámetros formales
+    double total = 0.0;
+    for (int i = 1; i <= cantidad; i++) {
+        double peso;
+        cout << "Ingresa el peso del producto " << i << " (en gramos): ";
+        cin >> peso;
+        total += peso;
+    }
+    return total;
+}
