@@ -1,0 +1,68 @@
+Ejercicio 5 - Brisei Maldonado
+
+#include <iostream.h>
+#include <conio.h>
+
+#define MAX 100  // Tamaño máximo del vector
+
+// PROTOTIPOS DE FUNCIONES
+void cargarVector(int v[], int n);
+void mostrarVector(int v[], int n);
+int esCapicua(int v[], int n);
+
+// FUNCIÓN PRINCIPAL
+int main() {
+    int v[MAX];
+    int n;
+
+    cout << "Ingrese la cantidad de elementos del vector: ";
+    cin >> n;
+
+    if (n > MAX || n <= 0) {
+        cout << "Cantidad invalida. Debe ser entre 1 y " << MAX << "." << endl;
+        getch();
+        return 0;
+    }
+
+    cout << "\nCARGA DEL VECTOR " << endl;
+    cargarVector(v, n);
+
+    cout << "\nVECTOR INGRESADO " << endl;
+    mostrarVector(v, n);
+
+    if (esCapicua(v, n))
+        cout << "\nEl vector ES capicua." << endl;
+    else
+        cout << "\nEl vector NO es capicua." << endl;
+
+    getch();
+    return 0;
+}
+
+//DEFINICIONES DE FUNCIONES
+
+// Carga los elementos del vector
+void cargarVector(int v[], int n) {
+    for (int i = 0; i < n; i++) {
+        cout << "Elemento [" << i << "]: ";
+        cin >> v[i];
+    }
+}
+
+// Muestra los elementos del vector
+void mostrarVector(int v[], int n) {
+    for (int i = 0; i < n; i++) {
+        cout << v[i] << " ";
+    }
+    cout << endl;
+}
+
+// Verifica si el vector es capicúa
+int esCapicua(int v[], int n) {
+    for (int i = 0; i < n / 2; i++) {
+        if (v[i] != v[n - 1 - i]) {
+            return 0; 
+        }
+    }
+    return 1; 
+}
