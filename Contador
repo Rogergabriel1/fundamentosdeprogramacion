@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+
+// ---------------- PROTOTIPOS ----------------
+void cargarVector(int v[], int n);
+int contarImpares(int v[], int n);
+void mostrarResultado(int cantidad);
+
+// ---------------- FUNCIÓN PRINCIPAL ----------------
+int main() {
+    int n;
+
+    cout << "¿Cuantos elementos tendra el vector?: ";
+    cin >> n;
+
+    int vector[n];
+
+    cargarVector(vector, n);
+
+    int impares = contarImpares(vector, n);
+
+    mostrarResultado(impares);
+
+    return 0;
+}
+
+// ---------------- FUNCIONES ----------------
+
+// Cargar números al vector
+void cargarVector(int v[], int n) {
+    for (int i = 0; i < n; i++) {
+        cout << "Ingrese el elemento " << i + 1 << ": ";
+        cin >> v[i];
+    }
+}
+
+// Contar cuántos números impares hay
+int contarImpares(int v[], int n) {
+    int contador = 0;
+
+    for (int i = 0; i < n; i++) {
+        if (v[i] % 2 != 0) {
+            contador++;
+        }
+    }
+
+    return contador;
+}
+
+// Mostrar el resultado
+void mostrarResultado(int cantidad) {
+    cout << "\nLa cantidad de numeros impares es: " << cantidad << endl;
+}
